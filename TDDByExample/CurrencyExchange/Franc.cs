@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System;
 
 namespace TDDByExample.CurrencyExchange
 {
-    public class Dollar : IEquatable<Dollar>
+
+    public class Franc : IEquatable<Franc>
     {
         public readonly decimal Amount;
 
-        public Dollar(decimal amount)
+        public Franc(decimal amount)
         {
             this.Amount = amount;
         }
 
-        public Dollar Times(int multiplier) => new Dollar(Amount*multiplier);
+        public Franc Times(int multiplier) => new Franc(Amount * multiplier);
 
-        public bool Equals(Dollar other)
+        public bool Equals(Franc other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
@@ -27,7 +26,7 @@ namespace TDDByExample.CurrencyExchange
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((Dollar) obj);
+            return Equals((Franc) obj);
         }
 
         public override int GetHashCode()
